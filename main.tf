@@ -58,7 +58,7 @@ resource "aws_instance" "four" {
   instance_type   = "t2.large"
   key_name        = "devops"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-south-1c"
+  availability_zone = "ap-south-1b"
   tags = {
     Name = "app-server-2"
   }

@@ -1,7 +1,7 @@
 provider "aws" {
-region = "ap-south-1a"
-access_key = "AKIAWDHXRCZ4UAJYZ5AC"
-secret_key = "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"
+region = "ap-south-1c"
+access_key = "AKIAWDHXRCZ4ZG45HB24"
+secret_key = "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"
 }
 
 resource "aws_instance" "one" {
@@ -28,7 +28,7 @@ resource "aws_instance" "two" {
   instance_type   = "t2.micro"
   key_name        = "devops"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-south-1a"
+  availability_zone = "ap-south-1"b
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -58,7 +58,7 @@ resource "aws_instance" "four" {
   instance_type   = "t2.micro"
   key_name        = "devops"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-south-1a"
+  availability_zone = "ap-south-1c"
   tags = {
     Name = "app-server-2"
   }

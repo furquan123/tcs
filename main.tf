@@ -1,11 +1,11 @@
 provider "aws" {
 region = "ap-south-1"
-access_key = "AKIAWDHXRCZ4ZG45HB24"
-secret_key = "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"
+access_key = "AKIAWDHXRCZ44O436KI7"
+secret_key = "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"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-0a5ac53f63249fba0"
+  ami             = "ami-0d92749d46e71c34c"
   instance_type   = "t2.micro"
   key_name        = "devops"
   vpc_security_group_ids = [aws_security_group.five.id]
@@ -24,8 +24,8 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-0a5ac53f63249fba0"
-  instance_type   = "t2.micro"
+  ami             = "ami-0d92749d46e71c34c"
+  instance_type   = "t2.medium"
   key_name        = "devops"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "ap-south-1b"
@@ -43,8 +43,8 @@ EOF
 }
 
 resource "aws_instance" "three" {
-  ami             = "ami-0a5ac53f63249fba0"
-  instance_type   = "t2.micro"
+  ami             = "ami-0d92749d46e71c34c"
+  instance_type   = "t2.large"
   key_name        = "devops"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "ap-south-1a"
@@ -54,7 +54,7 @@ resource "aws_instance" "three" {
 }
 
 resource "aws_instance" "four" {
-  ami             = "ami-0a5ac53f63249fba0"
+  ami             = "ami-0d92749d46e71c34c"
   instance_type   = "t2.large"
   key_name        = "devops"
   vpc_security_group_ids = [aws_security_group.five.id]
@@ -65,7 +65,7 @@ resource "aws_instance" "four" {
 }
 
 resource "aws_security_group" "five" {
-  name = "elb-sg"
+  name = "elb-fk23"
   ingress {
     from_port   = 22
     to_port     = 22
@@ -89,7 +89,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "furkhan"
+  bucket = "fk23"
 }
 
 resource "aws_iam_user" "seven" {
@@ -105,8 +105,8 @@ default = ["lnmonpqrst", "hijk", "efg", "abcd"]
 
 resource "aws_ebs_volume" "eight" {
  availability_zone = "ap-south-1a"
-  size = 20
+  size = 25
   tags = {
-    Name = "furkhan-01"
+    Name = "nice-01"
   }
 }

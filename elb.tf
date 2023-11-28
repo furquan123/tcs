@@ -1,6 +1,6 @@
 resource "aws_elb" "bar" {
   name               = "furkhan-terraform-elb"
-  availability_zones = ["ap-south-1a", "ap-south-1b"]
+  availability_zones = ["ap-south-1b", "ap-south-1c"]
 
   listener {
     instance_port     = 80
